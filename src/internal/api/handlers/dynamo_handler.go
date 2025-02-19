@@ -9,12 +9,12 @@ import (
 )
 
 type DynamoHandler struct {
-	dynamoService services.DynamoService
+	dynamoService services.IDynamoService
 }
 
-func NewDynamoHandler(dynamoService services.DynamoService) *DynamoHandler {
+func NewDynamoHandler(dynamoService services.IDynamoService) *DynamoHandler {
 	return &DynamoHandler{
-		dynamoService,
+		dynamoService: dynamoService,
 	}
 }
 
